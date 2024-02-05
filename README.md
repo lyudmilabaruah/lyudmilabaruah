@@ -28,7 +28,8 @@ SELECT SUM(CAST(arrest AS INT64)) as total_arrests
 FROM `bigquery-public-data.chicago_crime.crime`
 WHERE arrest = TRUE;
 ```
-![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/b355ae52-7cf7-427e-9e59-ed025b9fd612)
+![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/aa91c80f-2a52-4fec-8c45-e2f50d531e4a)
+
 
 Q5: To find the total number of arrests for 'criminal sexual assault.'
 ```SQL
