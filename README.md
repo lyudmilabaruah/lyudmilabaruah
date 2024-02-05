@@ -2,49 +2,62 @@ I have used two datasets; for normal queries, I have taken the dataset CHICAGO_C
 
 Q1: To find the total number of crimes in Chicago between 2002 and 2017.
 ```SQL
-SELECT count(*) as total_crimes FROM `bigquery-public-data.chicago_crime.crime` where year between 2002 and 2017;
+SELECT count(*) as total_crimes
+FROM `bigquery-public-data.chicago_crime.crime` where year between 2002 and 2017;
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/4bb0667b-7fba-4460-be01-bb4854103d35)
 
 Q2: To find the total number of robberies taking place in Chicago.
 ```SQL
-SELECT count(*) as total_robberies FROM `bigquery-public-data.chicago_crime.crime` where primary_type = 'ROBBERY';
+SELECT count(*) as total_robberies
+FROM `bigquery-public-data.chicago_crime.crime` where primary_type = 'ROBBERY';
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/0b7c6208-db6d-4f4c-bbdb-472f63e7f111)
 
 Q3: To find five dates with the highest number of sidewalk crimes.
  ```SQL
-SELECT date, location_description  FROM `bigquery-public-data.chicago_crime.crime` Where location_description = 'SIDEWALK' order by location_description desc Limit 5;
+SELECT date, location_description
+FROM `bigquery-public-data.chicago_crime.crime`
+Where location_description = 'SIDEWALK' order by location_description desc Limit 5;
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/16e9b736-9180-4202-b818-9123bb0f379a)
 
 Q4: To find the total number of 'true' arrests.
 ```
-SELECT SUM(CAST(arrest AS INT64)) as total_arrests FROM `bigquery-public-data.chicago_crime.crime` WHERE arrest = TRUE;
+SELECT SUM(CAST(arrest AS INT64)) as total_arrests
+FROM `bigquery-public-data.chicago_crime.crime`
+WHERE arrest = TRUE;
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/b355ae52-7cf7-427e-9e59-ed025b9fd612)
 
 Q5: To find the total number of arrests for 'criminal sexual assault.'
 ```SQL
-SELECT SUM(CAST(arrest AS INT64)) as total_arrests FROM `bigquery-public-data.chicago_crime.crime` WHERE primary_type = 'CRIMINAL SEXUAL ASSAULT' AND arrest = true;
+SELECT SUM(CAST(arrest AS INT64)) as total_arrests
+FROM `bigquery-public-data.chicago_crime.crime`
+WHERE primary_type = 'CRIMINAL SEXUAL ASSAULT' AND arrest = true;
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/6ca3b32a-718f-4801-9806-25e968e3bfa9)
 
 Q6: To find the total number of 'false' arrests.
 ```SQL
-SELECT SUM(CASE WHEN arrest = false THEN 1 ELSE 0 END) as total_false_arrests FROM `bigquery-public-data.chicago_crime.crime`;
+SELECT SUM(CASE WHEN arrest = false THEN 1 ELSE 0 END) as total_false_arrests
+ FROM `bigquery-public-data.chicago_crime.crime`;
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/0cab9cd0-bd40-423d-a0a2-f6bee79ff484)
 
 Q7: To find the total number of crimes taking place in 'restaurants.'
 ```SQL
-SELECT COUNT(*) as total_crimes_in_restaurants FROM `bigquery-public-data.chicago_crime.crime` WHERE location_description = 'RESTAURANT';
+SELECT COUNT(*) as total_crimes_in_restaurants
+FROM `bigquery-public-data.chicago_crime.crime`
+WHERE location_description = 'RESTAURANT';
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/e4fb121f-1731-49fc-af4a-279f91497cb1)
 
 Q8: To find the total number of 'strongarm-no weapon' crimes.
 ```SQL
-SELECT count(*) as total_strongarm_crime  FROM `bigquery-public-data.chicago_crime.crime` where description = 'STRONGARM - NO WEAPON';
+SELECT count(*) as total_strongarm_crime
+FROM `bigquery-public-data.chicago_crime.crime`
+where description = 'STRONGARM - NO WEAPON';
 ```
 ![image](https://github.com/lyudmilabaruah/lyudmilabaruah/assets/154314534/387955bc-4beb-4ebb-9cdd-e4d197b3d71d)
 
